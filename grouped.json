@@ -1,0 +1,3844 @@
+{
+  "Admin": [
+    {
+      "name": "Clients",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/secured?": false,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "9ba57ed4-9868-4a57-afbf-449b44ca9e18",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "0af843ff-a6cb-4490-997a-e61dc1aa9568",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "7bd4dc87-93dc-4085-8fb8-590e66ab9ca3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "99134f80-dd0a-4ba1-96f9-54c1face96cf",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "afd93ed0-206f-4f94-a3f5-bb7d0198c989",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "12f69fbe-15db-4979-889f-f0f6aa915380",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Description",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": -1,
+            "fibery/required?": true
+          },
+          "fibery/id": "24d1f7eb-7478-422b-ac40-c21fad58858a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": true
+          },
+          "fibery/id": "c80ee55d-e8b7-4ae3-8fe3-cd314736f352",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Projects",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "dece0c30-e54e-11ef-a572-f9db01d08139",
+            "ui/object-editor-order": 1
+          },
+          "fibery/id": "6b98db04-566a-4d72-9caf-0d7d18259674",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Resources",
+          "fibery/type": "Admin/Resources",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "77ba8aa0-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 2
+          },
+          "fibery/id": "2b39fec4-07d7-4dc3-86ce-3e4e834458be",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Tasks_0yvzzd8_deleted",
+          "fibery/type": "Admin/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "8bdb4830-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 3
+          },
+          "fibery/id": "238e4f06-7025-4872-b935-1b111723f8a9",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Team Members_1mjwcwd_deleted",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "formula/disabled?": true,
+            "formula/formula?": true,
+            "formula/lookup?": true,
+            "ui/object-editor-order": 5,
+            "formula/disable-reason": "field-not-found",
+            "fibery/field-reversed-collection?": true,
+            "history/disabled?": false,
+            "fibery/collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "a0e875b0-e63c-11ef-8eaf-6d49e7dba25b",
+                  "06048ed0-e632-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "2c933bac-efc1-491f-9102-16d17c954a5f"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "dc4ffab0-e63c-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Teams",
+          "fibery/type": "Admin/Teams",
+          "fibery/meta": {
+            "ui/object-editor-order": 6,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "6b98db04-566a-4d72-9caf-0d7d18259674"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "08a77340-e63d-11ef-8eaf-6d49e7dba25b",
+                    "e16a97e0-e631-11ef-8eaf-6d49e7dba25b"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "537d7860-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Teams Members",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "ui/object-editor-order": 7,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "537d7860-e63d-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": {
+                    "q/from": [
+                      "06048ed0-e632-11ef-8eaf-6d49e7dba25b"
+                    ],
+                    "q/select": {
+                      "fibery/id": [
+                        "2c933bac-efc1-491f-9102-16d17c954a5f"
+                      ]
+                    },
+                    "q/limit": "q/no-limit"
+                  }
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "61158ad0-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Teams_0gc6n4d_deleted",
+          "fibery/type": "Admin/Teams",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "497124c0-e63d-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 6
+          },
+          "fibery/id": "35ab5870-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Teams_1cqamod_deleted",
+          "fibery/type": "Admin/Teams",
+          "fibery/meta": {
+            "fibery/relation": "a4b81b50-e63c-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 4
+          },
+          "fibery/id": "a0e875b0-e63c-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Users_1dbxinx_deleted",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "d0e5c4c0-e63c-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 5,
+            "fibery/app-contributors-source?": true
+          },
+          "fibery/id": "be83f540-e63c-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "2395458a-3db6-48a7-b80b-bd7f42184669",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "documents/documents",
+          "fibery/type": "fibery/view",
+          "fibery/meta": {
+            "fibery/collection?": true
+          },
+          "fibery/id": "6b6f1f57-0047-4c9c-92a2-02544dbdb429",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "External Knowledge",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "a1238e70-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "a1238e71-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "a1238e74-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "a1238e75-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "acac2337-37ca-4147-8c53-a5252bc877d9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "a1238e76-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Description_1cdznv2_deleted",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": null,
+            "fibery/required?": true
+          },
+          "fibery/id": "a1238e73-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Full Text",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": 3,
+            "fibery/required?": true
+          },
+          "fibery/id": "9378ffed-db7a-4335-8b54-1d2aa2c3600d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/title?": true
+          },
+          "fibery/id": "a1238e72-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/People_00b8hhm_deleted",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "64f46a00-e7ae-11ef-b55b-9b5a8433bbcf",
+            "ui/object-editor-order": 5,
+            "fibery/app-contributors-source?": true
+          },
+          "fibery/id": "57d9c4f0-e7ae-11ef-b55b-9b5a8433bbcf",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Summary",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": 1,
+            "fibery/required?": true
+          },
+          "fibery/id": "2157f122-4f3b-41fa-8ee9-c9bb808ceb90",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/URL",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/type": "url",
+            "ui/object-editor-order": 4,
+            "fibery/secured?": true
+          },
+          "fibery/id": "d3afe89b-03a6-48c3-bd02-4981af46dca7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "9b17d944-dd9c-4e40-a9db-58b3b52c7f63",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "documents/documents_1lfqc2e_deleted",
+          "fibery/type": "fibery/view",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "ui/object-editor-order": 2
+          },
+          "fibery/id": "f8e53f85-2b20-4cfb-b38c-8a622f484b8a",
+          "fibery/deleted?": true
+        }
+      ]
+    },
+    {
+      "name": "Note Taker_HQ",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "05e6e2c5-eab2-4d10-be06-10888c18e7fa",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "0063a994-e5ab-489b-88bd-91d277bd03fd",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "f139c1a8-f7b4-4744-9eab-4fb08f304381",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/entities",
+          "fibery/type": "Admin/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "9ca57d31-e62e-11ef-91de-39f87a2ffdd6"
+          },
+          "fibery/id": "870f88b5-9b10-4f7a-91bd-7608769b39c6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "6685b161-60f6-4d36-abdc-32616c2981f6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "65ec4277-835a-4fc0-a5ce-0a3518cdab82",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "1b19e240-31f1-4274-b93f-598ab9155686",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Notes",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "193a0fa0-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "193a0fa1-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "193a0fa4-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "193a0fa5-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "f17d960a-c9a1-4555-8142-0f52452ef0b1",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "193a0fa6-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Archive_1mzazcm_deleted",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "fibery/default-value": false,
+            "fibery/secured?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "bf1afcb7-2236-42c4-ae2c-cd3667918f33",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Base URL_1fa73bl_deleted",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true
+          },
+          "fibery/id": "6ef8f048-a1f2-42f1-890d-fed77ed34eff",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Client",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "ui/object-editor-order": 5,
+            "formula/lookup?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": [
+                "b6afd280-e7a9-11ef-b55b-9b5a8433bbcf",
+                "d0b5cd40-e54e-11ef-a572-f9db01d08139",
+                "9ba57ed4-9868-4a57-afbf-449b44ca9e18"
+              ],
+              "params": {}
+            }
+          },
+          "fibery/id": "d71f80b0-e7a9-11ef-b55b-9b5a8433bbcf",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Client_09l5ja4_deleted",
+          "fibery/type": "Admin/Client HQ Notes_15eos87_deleted",
+          "fibery/meta": {
+            "ui/object-editor-order": 1,
+            "fibery/type-component?": true,
+            "fibery/relation": "9ca55621-e62e-11ef-91de-39f87a2ffdd6",
+            "fibery/required?": false
+          },
+          "fibery/id": "d58da5e2-8cac-4dd9-9f38-886164948986",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Date_15070eb_deleted",
+          "fibery/type": "fibery/date",
+          "fibery/meta": {
+            "ui/object-editor-order": 6,
+            "fibery/secured?": true
+          },
+          "fibery/id": "2f9553b5-7b9b-4351-8e80-1f4bc9474e6c",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Date_1osv9et_deleted",
+          "fibery/type": "fibery/decimal",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/number-unit": "",
+            "ui/number-precision": 4
+          },
+          "fibery/id": "70a671a6-97f2-4411-a02c-267f1c5a5ead",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Description",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": null,
+            "fibery/required?": true
+          },
+          "fibery/id": "193a0fa3-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Drive File",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/type": "url",
+            "ui/object-editor-order": 7,
+            "fibery/secured?": true
+          },
+          "fibery/id": "0035f02f-3cc6-4913-8f2a-173fec15ccf0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Drive File_1jdh4ng_deleted",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true
+          },
+          "fibery/id": "9e358501-bfa2-4df2-9979-03d9ff7c51e6",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/title?": true
+          },
+          "fibery/id": "193a0fa2-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Note Taker",
+          "fibery/type": "Admin/Note Taker_HQ/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "ui/object-editor-order": 3,
+            "fibery/type-component?": true,
+            "fibery/relation": "9ca57d31-e62e-11ef-91de-39f87a2ffdd6"
+          },
+          "fibery/id": "015c3e91-df79-42a1-ba7b-04078e8cf647",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Project",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/relation": "bc2bc890-e7a9-11ef-b55b-9b5a8433bbcf",
+            "ui/object-editor-order": 4
+          },
+          "fibery/id": "b6afd280-e7a9-11ef-b55b-9b5a8433bbcf",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Project Team Members",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "ui/object-editor-order": 9,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "b6afd280-e7a9-11ef-b55b-9b5a8433bbcf",
+                  "17a1adc0-e63d-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "2c933bac-efc1-491f-9102-16d17c954a5f"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "38983350-e7aa-11ef-b55b-9b5a8433bbcf",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Project_0jers14_deleted",
+          "fibery/type": "Admin/Project HQ Note_0469o9o_deleted",
+          "fibery/meta": {
+            "ui/object-editor-order": 2,
+            "fibery/type-component?": true,
+            "fibery/relation": "9ca57d30-e62e-11ef-91de-39f87a2ffdd6",
+            "fibery/required?": false
+          },
+          "fibery/id": "c8366bec-1268-4154-9b88-4ff08422a5e0",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Project_1kbaxtm_deleted",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/relation": "a24cb4c0-e7a9-11ef-b55b-9b5a8433bbcf",
+            "ui/object-editor-order": 4
+          },
+          "fibery/id": "9c34a5c0-e7a9-11ef-b55b-9b5a8433bbcf",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Tags",
+          "fibery/type": "Admin/Tags_Admin/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "ui/object-editor-order": 8,
+            "fibery/type-component?": true,
+            "fibery/relation": "19150800-e7aa-11ef-b55b-9b5a8433bbcf"
+          },
+          "fibery/id": "64138539-6b3d-4a67-aecb-c402e0fd517a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Tags_0k45hsi_deleted",
+          "fibery/type": "Admin/Tags HQ Notes_0lrnjhh_deleted",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "ui/object-editor-order": 0,
+            "fibery/type-component?": true,
+            "fibery/relation": "9ca55620-e62e-11ef-91de-39f87a2ffdd6"
+          },
+          "fibery/id": "b4dc08ed-a81a-4fa4-a7e4-2fb1735d55aa",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Tasks_1er4u1r_deleted",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "e0ad584f-be13-4476-ab09-8660c35cee46",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/URL_1hca9ap_deleted",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/type": "url"
+          },
+          "fibery/id": "24f588f6-f843-4c21-b6aa-b4952a22bdd3",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "5835bb58-e04c-438c-902c-dec5d200e089",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Operational Status_HQ",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "0cc3056f-2993-48ba-bb32-664a3caba008",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "699ceb25-1616-4158-ba8c-38cec5c1e61d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "e849711e-7b61-4e45-9583-4be215d16d17",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/entities",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "eab1e370-e655-11ef-967f-b3b87468317c"
+          },
+          "fibery/id": "2536e653-b47b-4f04-8908-f95355f3ffb3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "8f81ecae-b2b0-4647-91c7-a37f40ab2f45",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "be093d96-4cf2-454c-baf2-2267c9e4d9df",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "b58e1c33-a6ca-4096-8f0f-cee2ca5b9f45",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "fdc540a0-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "fdc540a1-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "fdc540a4-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "fdc540a5-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "b0d0bca0-6cf1-4eee-ab4b-a4ce019380b2",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "fdc540a6-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Client",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "fibery/relation": "dece0c30-e54e-11ef-a572-f9db01d08139",
+            "ui/object-editor-order": 2
+          },
+          "fibery/id": "d0b5cd40-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Description_0goyv1q_deleted",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": null,
+            "fibery/required?": true
+          },
+          "fibery/id": "fdc540a3-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/title?": true
+          },
+          "fibery/id": "fdc540a2-e54d-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Notes",
+          "fibery/type": "Admin/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "bc2bc890-e7a9-11ef-b55b-9b5a8433bbcf",
+            "ui/object-editor-order": 8
+          },
+          "fibery/id": "94506c05-765b-4e27-b272-d0bbb535daf3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Notes_1xiyenj_deleted",
+          "fibery/type": "Admin/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "a24cb4c0-e7a9-11ef-b55b-9b5a8433bbcf",
+            "ui/object-editor-order": 8
+          },
+          "fibery/id": "de056c4e-3ca8-4e80-8e7c-0c4516452a24",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Operational Status",
+          "fibery/type": "Admin/Operational Status_HQ/Projects",
+          "fibery/meta": {
+            "ui/object-editor-order": 7,
+            "fibery/type-component?": true,
+            "fibery/relation": "eab1e370-e655-11ef-967f-b3b87468317c",
+            "fibery/required?": false
+          },
+          "fibery/id": "13faae06-74d3-4df6-bbd8-36865a810722",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Sale Status_0sencze_deleted",
+          "fibery/type": "Admin/Sale Status HQ _1cmyr2i_deleted",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "ui/object-editor-order": 1,
+            "fibery/type-component?": true,
+            "fibery/relation": "96477550-e54e-11ef-a572-f9db01d08139",
+            "fibery/entity-of-field-type-can-be-created-by-creator-only?": true
+          },
+          "fibery/id": "75deee66-243a-4b38-99d8-ff8d2e5d05a9",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Sales Status",
+          "fibery/type": "Admin/Sales Status_HQ/Projects",
+          "fibery/meta": {
+            "ui/object-editor-order": 3,
+            "fibery/type-component?": true,
+            "fibery/relation": "f0ed91c0-e62e-11ef-91de-39f87a2ffdd6",
+            "fibery/required?": false
+          },
+          "fibery/id": "ca4def8c-2b61-455e-b78f-f0ccbbd0530c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Tasks",
+          "fibery/type": "Admin/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "cd8d0fc0-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 4
+          },
+          "fibery/id": "16e3353c-403a-4c6d-9a6e-1bdd6ab64ff3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Team",
+          "fibery/type": "Admin/Teams",
+          "fibery/meta": {
+            "fibery/relation": "0dbc6a20-e63d-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 5
+          },
+          "fibery/id": "08a77340-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Team Members",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "ui/object-editor-order": 6,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "08a77340-e63d-11ef-8eaf-6d49e7dba25b",
+                  "06048ed0-e632-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "2c933bac-efc1-491f-9102-16d17c954a5f"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "17a1adc0-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Team_1sabvx5_deleted",
+          "fibery/type": "Admin/Teams",
+          "fibery/meta": {
+            "fibery/relation": "c2fa0650-e637-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 5
+          },
+          "fibery/id": "57813e1c-f5b2-4bd8-958c-953c500e20a1",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "1d15fb28-a382-4959-a794-a26deb49224b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "documents/documents",
+          "fibery/type": "fibery/view",
+          "fibery/meta": {
+            "fibery/collection?": true
+          },
+          "fibery/id": "145e328b-9a4c-4734-8951-5d67f876262a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "whiteboards/whiteboards",
+          "fibery/type": "fibery/view",
+          "fibery/meta": {
+            "fibery/collection?": true
+          },
+          "fibery/id": "341d87bb-2d66-4141-a013-f7b441fdb79a",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "063ff7c0-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "063ff7c1-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "063ff7c4-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "063ff7c5-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "6b7f7d12-9c92-43c7-8c28-7c890d6ecce3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "063ff7c6-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Client",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "fibery/relation": "77ba8aa0-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 1
+          },
+          "fibery/id": "6d18d4d0-e62f-11ef-91de-39f87a2ffdd6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Client Teams",
+          "fibery/type": "Admin/Teams",
+          "fibery/meta": {
+            "ui/object-editor-order": 2,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "6d18d4d0-e62f-11ef-91de-39f87a2ffdd6",
+                  "537d7860-e63d-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "e16a97e0-e631-11ef-8eaf-6d49e7dba25b"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "8a8b1920-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Client Teams Members",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "ui/object-editor-order": 3,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "6d18d4d0-e62f-11ef-91de-39f87a2ffdd6",
+                  "61158ad0-e63d-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "2c933bac-efc1-491f-9102-16d17c954a5f"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "93c799a0-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Description",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": null,
+            "fibery/required?": true
+          },
+          "fibery/id": "063ff7c3-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/title?": true
+          },
+          "fibery/id": "063ff7c2-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "b72f695b-fa6c-41f9-a2be-7b616e687aeb",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Sales Status_HQ",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "ddebd055-7464-42fb-a216-40cbe689beb9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "25841d2c-2b05-4966-9fa1-805d9baf928b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "3b802bfa-e119-4709-b53b-16ce1ec027eb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/entities",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "f0ed91c0-e62e-11ef-91de-39f87a2ffdd6"
+          },
+          "fibery/id": "3515b27b-e0c5-4a35-aff7-4f64f0d5db2c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "afd647dd-d0d4-447c-bddf-91b0e4b6d13e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "894242e4-8c62-43ce-8dcd-8952ac47a0fa",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "53aef585-17e4-4e4c-83ec-fe829b95c9c0",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Status_HQ",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "1fe1f8b6-e5e4-49b0-b109-7a1ff99e52eb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "3ac1da63-4033-4b28-b321-50abb639716c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "b1b2f050-c4c3-43a6-9036-3bc2a1aa4ee4",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/entities",
+          "fibery/type": "Admin/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "050ecf10-e630-11ef-91de-39f87a2ffdd6"
+          },
+          "fibery/id": "7622fc7f-b73f-46c8-bc3d-5a1f282c32fb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "62067f96-76cc-412c-9864-0627a82e171b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "3b125099-e777-4f40-bbdd-1fc26fe7c19f",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "2471b82f-59dd-48ee-b273-4036556ac436",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Tags_Admin",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "4a6b0599-a390-469d-abd1-7c2d82705a92",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "e80cf2d4-529e-4a0f-a125-814ac3be1823",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "5e07d47f-f1f3-4583-8fae-3b75faaf8455",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/entities",
+          "fibery/type": "Admin/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "19150800-e7aa-11ef-b55b-9b5a8433bbcf"
+          },
+          "fibery/id": "787c908d-2ee0-4fd7-a89b-633107949058",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "9317c400-0e2c-4e5d-bcdc-7ce42e1d81c5",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "cdcc1939-2e3d-4ccf-b505-3a0b65569498",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "9b346dc3-e88c-488e-af5c-c4df67c43784",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "0b776ac0-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "0b776ac1-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "0b776ac4-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "0b776ac5-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "ae707d3b-5737-4b6b-bd73-2aa8529cfd1a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "0b776ac6-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Assigned To",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "b8e743b0-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 2,
+            "fibery/app-contributors-source?": true
+          },
+          "fibery/id": "a8c15a70-e62f-11ef-91de-39f87a2ffdd6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Client_02zp8fl_deleted",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "fibery/relation": "8bdb4830-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 1
+          },
+          "fibery/id": "87169430-e62f-11ef-91de-39f87a2ffdd6",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Description",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": 6,
+            "fibery/required?": true
+          },
+          "fibery/id": "f7ce2721-c947-4a1f-9fdf-55e95b14f456",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Description_1k7rq32_deleted",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": null,
+            "fibery/required?": true
+          },
+          "fibery/id": "0b776ac3-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Due",
+          "fibery/type": "fibery/date",
+          "fibery/meta": {
+            "ui/object-editor-order": 4,
+            "fibery/secured?": true
+          },
+          "fibery/id": "3a1a77e1-7654-4dec-921d-d98ff0b8ed96",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/title?": true
+          },
+          "fibery/id": "0b776ac2-e54e-11ef-a572-f9db01d08139",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Project",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/relation": "cd8d0fc0-e62f-11ef-91de-39f87a2ffdd6",
+            "ui/object-editor-order": 3
+          },
+          "fibery/id": "c7bf5030-e62f-11ef-91de-39f87a2ffdd6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Project Client",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "ui/object-editor-order": 7,
+            "formula/lookup?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": [
+                "c7bf5030-e62f-11ef-91de-39f87a2ffdd6",
+                "d0b5cd40-e54e-11ef-a572-f9db01d08139",
+                "9ba57ed4-9868-4a57-afbf-449b44ca9e18"
+              ],
+              "params": {}
+            }
+          },
+          "fibery/id": "c30987f0-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Project Team Members",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "ui/object-editor-order": 8,
+            "formula/lookup?": true,
+            "fibery/collection?": true,
+            "fibery/field-reversed-collection?": true,
+            "fibery/readonly?": true,
+            "formula/formula?": true,
+            "history/disabled?": false,
+            "formula/formula": {
+              "expression": {
+                "q/from": [
+                  "c7bf5030-e62f-11ef-91de-39f87a2ffdd6",
+                  "17a1adc0-e63d-11ef-8eaf-6d49e7dba25b"
+                ],
+                "q/select": {
+                  "fibery/id": [
+                    "2c933bac-efc1-491f-9102-16d17c954a5f"
+                  ]
+                },
+                "q/limit": "q/no-limit"
+              },
+              "params": {}
+            }
+          },
+          "fibery/id": "dc845bb0-e63d-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Status",
+          "fibery/type": "Admin/Status_HQ/Tasks",
+          "fibery/meta": {
+            "ui/object-editor-order": 5,
+            "fibery/type-component?": true,
+            "fibery/relation": "050ecf10-e630-11ef-91de-39f87a2ffdd6",
+            "fibery/required?": false,
+            "fibery/default-value": {
+              "fibery/id": "fb57a050-e62f-11ef-91de-39f87a2ffdd6"
+            }
+          },
+          "fibery/id": "7f9f2143-5130-4b9b-9b36-fdaee931f75f",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "d31805e1-4c07-4c2a-bb7e-2f233d342936",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Teams",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "e16a97e0-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "e16a97e1-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "e16a97e4-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "e16a97e5-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "d9d79605-429f-460e-a354-70e65578bc35",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "e16a97e6-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Clients_11jv3u4_deleted",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "497124c0-e63d-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 4
+          },
+          "fibery/id": "a21a1aaf-fc92-487a-ae6d-727bf7b3ec82",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Clients_1uf0mfm_deleted",
+          "fibery/type": "Admin/Clients",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "a4b81b50-e63c-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 2
+          },
+          "fibery/id": "9099dc00-88a1-4381-bd5a-de1bca3d6908",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Description_1u35s7y_deleted",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "fibery/entity-component?": true,
+            "ui/object-editor-order": null,
+            "fibery/required?": true
+          },
+          "fibery/id": "e16a97e3-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Admin/Members",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "115633b0-e632-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 1,
+            "fibery/app-contributors-source?": true,
+            "fibery/user-group?": true
+          },
+          "fibery/id": "06048ed0-e632-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "ui/title?": true
+          },
+          "fibery/id": "e16a97e2-e631-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Projects",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "0dbc6a20-e63d-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 3
+          },
+          "fibery/id": "9029c5af-81e6-4ff1-be42-276562f4ca0c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Admin/Projects_1f3j7wd_deleted",
+          "fibery/type": "Admin/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "c2fa0650-e637-11ef-8eaf-6d49e7dba25b",
+            "ui/object-editor-order": 2
+          },
+          "fibery/id": "b76ae340-e637-11ef-8eaf-6d49e7dba25b",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "5ff137b9-2947-4510-be04-37f8bcc8d6b2",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "Collaboration~Documents": [
+    {
+      "name": "Document",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/secured?": false,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "b9689c96-8f50-43ec-b433-4108425e20d2",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/Snippet",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/entity-update-field-only-effect?": true
+          },
+          "fibery/id": "b94d09ae-eafc-422c-8188-e895308a0b3a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "b6f4b776-4810-4e56-966a-5047d57c13f9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/secret",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/unique?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "45b56eaf-6253-4841-8003-f66ee0e164b8",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Reference",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/secured?": false,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "9c602e74-2dc4-4592-8085-654725e008bb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "a3e3bfe9-073f-44b3-b454-f69a0f7e7da6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "815211a9-009a-4ab7-958f-b0f2142ce072",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/FromEntityField",
+          "fibery/type": "fibery/field",
+          "fibery/meta": {
+            "fibery/readonly?": true
+          },
+          "fibery/id": "af802398-1bd1-43e5-81a9-ea146c1029b6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/FromEntityId",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "41dd9d89-6f1d-4cb7-be4d-b0946be0a99b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/FromEntityType",
+          "fibery/type": "fibery/type",
+          "fibery/meta": {
+            "fibery/readonly?": true
+          },
+          "fibery/id": "ae258bbe-988f-466c-a5b6-603fa3b710e3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/FromTypeId",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/secured?": true
+          },
+          "fibery/id": "561021f0-0df5-4fab-8ffa-ca05932c320b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/ParagraphSecret",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "cecdac64-e74c-4284-9db0-706616252292",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/ReferenceType",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/required?": true,
+            "fibery/default-value": "back-reference"
+          },
+          "fibery/id": "7882d3bc-c65e-4bad-b111-0d5095c02e9e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/ToEntityId",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "8d84656e-ded5-4a49-9410-b8e4f04536c7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/ToEntityType",
+          "fibery/type": "fibery/type",
+          "fibery/meta": {
+            "fibery/readonly?": true
+          },
+          "fibery/id": "c95e5f0f-6d54-40fc-92fe-37493bd3b725",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/ToTypeId",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/secured?": true
+          },
+          "fibery/id": "7e19ea36-d5e4-45ce-8692-60512022b683",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "ReferencesMixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "7392998c-6c2d-492d-84ce-6ad700438824",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "Files": [
+    {
+      "name": "Files-mixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "Files/Files",
+          "fibery/type": "fibery/file",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "fbfd1983-bf83-483f-ab34-a48fb97ed368",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "Notion Import": [
+    {
+      "name": "Clients",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "31197fec-4ea9-480b-a285-61b22de8ba6e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "3ee72b0c-9b68-422c-ba48-6e02ef3aed8f",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "e97d6ba9-f762-4191-abee-cb4185879627",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "a1545f4a-bb8b-435d-bc6e-dc625c2b4c7e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "d6564719-bc0c-4fa9-be5e-1b34a729db49",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "bc51d6a5-938b-4654-85de-f910d0236feb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "15e244b1-5b94-406b-8ad5-a1f7cf1defd7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archive_1v04cxa_deleted",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "5eab62d8-70e1-4e05-a759-e9def86fc36d",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Notion Import/Archived",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "43089868-d04d-4bd6-bde4-87f0310f96c9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Created On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "5fb2c332-9bf0-47bc-bba8-1e46b7094d31",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "eaab6457-a4a0-489c-ab70-812413617f12",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Last Edited On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "8d7dabef-6fb5-413d-a98d-6cd80372526e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/readonly?": false,
+            "fibery/secured?": true
+          },
+          "fibery/id": "3e4e5e9f-acf5-4567-b387-5b314a3e6bd6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notes",
+          "fibery/type": "Notion Import/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "506e5de7-82ab-4759-94c8-045a2ec46077",
+            "fibery/readonly?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule?": false,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "3ebf9221-0801-4592-a4db-b201a137fb38",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notion Link",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "d3b19068-68ae-4a57-826e-c948c5c78bb7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Projects",
+          "fibery/type": "Notion Import/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "f3e79146-e7ff-4d90-a16d-c5b019877056",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "8f019abb-0f3c-4444-ad99-f6623f5c5ae7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Projects Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "2f695a87-eb84-4252-b062-0896c2308a5a",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Notes",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "873cc497-357b-48ab-8217-b6941d5060d9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "7cb11f72-fa9b-472a-a5a5-378a37d9fbd1",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "edf4102f-320c-4b8c-bbb9-3614114cf6a9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "7180ace9-6b0e-43cb-8802-51f4e07894dc",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "8ec0a075-469c-454d-8fd2-ba7726df844b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "839e850d-1893-4d8e-aec2-70570ab7906f",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "d1fcecfb-f790-4903-876d-0c2ea9bc331b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archive",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "90f9adaa-526d-4f19-beaa-a6377191b19a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archived",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "0d19c5de-340d-4ca1-8983-eb0b05bbdace",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Area",
+          "fibery/type": "Collaboration~Documents/Document",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "Collaboration~Documents/format": "md",
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/entity-component?": true,
+            "fibery/readonly?": false
+          },
+          "fibery/id": "75910eb4-6b06-4696-9373-3d1041081be9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Base URL",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "5ac13ee6-e455-497e-8c38-ea645d3eb933",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Client",
+          "fibery/type": "Notion Import/Clients",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "506e5de7-82ab-4759-94c8-045a2ec46077",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "95e6a455-e711-4878-bddb-1ff42d12c860",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Client Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "cde06f51-bc88-4254-a393-ec1cf040062c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Created On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "612e629f-31c5-46b5-9433-2a5e7d3747f5",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "92643d4a-4a45-4b48-ae5b-f4c7bfc56137",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Last Edited On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "e483d76b-4167-46a7-bc90-34eb196abc2f",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/readonly?": false,
+            "fibery/secured?": true
+          },
+          "fibery/id": "f7b368bd-b8fb-4c71-8e2a-6253ca0aa33c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notion Link",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "a420b5e2-4760-4b4f-9ac9-23b832ad7472",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Person Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "e6fcbf50-125f-4baf-a081-d2fb0d880974",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Person_1x6rk4v_deleted",
+          "fibery/type": "Notion Import/User_06s0wi1_deleted",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "4e8d6d6e-c29e-477a-8565-3d7472d4b23a",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "86adb5d0-4c88-4822-b5d5-154106ab701c",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Notion Import/Project",
+          "fibery/type": "Notion Import/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "9fdb3ade-851a-4f3d-bdb0-6898f7753866",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "95749bf8-2174-4723-85eb-ae2603113512",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Project Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "07753388-ec6d-4633-a93c-450031d57faf",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Tags",
+          "fibery/type": "Notion Import/Notes Tags Enum",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/collection?": true,
+            "fibery/type-component?": true,
+            "fibery/relation": "d6896771-1dcb-49ac-9af2-7635f57917ed"
+          },
+          "fibery/id": "070028e6-a59f-4b2b-9274-efd34f746735",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Tasks",
+          "fibery/type": "Notion Import/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "09911fac-67ac-4e9f-8f35-5c4c1b7bcd68",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "8c0fda39-6ddd-4942-acda-14ba888a65b0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Tasks Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "c751e73f-930d-4547-97c8-48ef6d62ca8d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/URL",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "b3344601-6d61-4cc9-8171-877a708a4828",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Notes Tags Enum",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "b31748f0-40b7-4f3c-b676-c46bffac11bb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "cb2b5941-9424-4f49-b161-927589cf0988",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "adcf97ec-b8b3-43d8-9152-fa1d08c2e270",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/entities",
+          "fibery/type": "Notion Import/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "d6896771-1dcb-49ac-9af2-7635f57917ed"
+          },
+          "fibery/id": "fdcaad1f-e1a4-49a1-a0c5-3da0da144758",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "543f5cd3-bdac-489a-bac8-0d97dc586548",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "76bfd69d-748e-441a-9b27-24f2f94f42e0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "1bb4a757-5256-4fa0-9b1f-b9c7e15c120a",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "df8c8a09-b906-499d-9417-986397ba3efa",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "0288b022-b404-45e1-8136-3a07daddb02b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "395afcbe-cd05-44a2-bcfd-b3ffd8ddbe21",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "5002a98a-cb4b-4588-b4c8-27326529156b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "e4b479f5-f920-4617-9f38-83e46d6bc9f9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "a724d82f-4571-46a3-ab37-096dcd5dc4b6",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "f4774adc-d965-4bf5-8c9b-080171d960e0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archive",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "e1f0259e-d817-4b6d-b782-58cc66a9fe7a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archived",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "1514d960-51f4-442b-b060-d2fe66c39d4c",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Client",
+          "fibery/type": "Notion Import/Clients",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "f3e79146-e7ff-4d90-a16d-c5b019877056",
+            "fibery/readonly?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule?": false,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "120dcc07-7206-405a-8732-317c9d5437e4",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Created On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "54ed6e9a-61ff-4f56-879b-90928da0aa0a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "074d57a7-5fcc-47f5-867c-811d73674045",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Last Edited On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "01fab7c7-b3c8-457d-8669-5ff2ecd007fb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/readonly?": false,
+            "fibery/secured?": true
+          },
+          "fibery/id": "2151be50-e72a-4401-8a46-42ab30a687fb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notes",
+          "fibery/type": "Notion Import/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "9fdb3ade-851a-4f3d-bdb0-6898f7753866",
+            "fibery/readonly?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule?": false,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "a73bb4f1-8117-4677-a616-7a0dfde9d643",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notion Link",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "93e16aa3-fcc6-4c61-8877-42dcc6aee53d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/State",
+          "fibery/type": "Notion Import/Projects State Enum",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/collection?": false,
+            "fibery/type-component?": true,
+            "fibery/relation": "90811802-9e79-4e68-81d6-4cf74662c968"
+          },
+          "fibery/id": "9a13b033-e2be-40b6-baf1-28c8bc347bcf",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Tasks",
+          "fibery/type": "Notion Import/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "387acbfc-1407-4b51-bfb7-b59dd57714f5",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "f89379c6-2d0b-4fda-86d3-f566f78e12b9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Tasks Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "05707151-e1ac-4425-9b65-a4e7cf71c590",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Projects State Enum",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "926bde23-5bfd-43e2-810e-58bf8ade1f51",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "0e251f87-e7ed-4994-ad05-27b4f5c0a545",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "80dbf2ba-6c81-4313-94a9-96bd8b366a5d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/entities",
+          "fibery/type": "Notion Import/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "90811802-9e79-4e68-81d6-4cf74662c968"
+          },
+          "fibery/id": "566e3ec8-6b70-4b83-ab5b-4e9168682589",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "aae7be48-d9eb-43db-ba13-8425cb799c8b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "e562da33-0ea1-4521-8c03-f793953e2913",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "a93c8503-3e6a-4acb-8289-93eddd304068",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "eb9cfc82-df96-466a-a4c8-e1814968a8c4",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "023832d3-b721-418b-be2c-7db7c21389de",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "4abdcec0-88ad-4bae-92a0-f79e89779ecd",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "008a902e-6fc8-47e8-b57f-3bd6a34338a9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "b7c964eb-41aa-4941-b292-125d2a6f22fd",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "ddf3c07a-3b43-4499-a169-97718922fe3d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "ae3b9ed7-c8d6-4d8e-938e-3c55af98d9d7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archived",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "d20e114e-b4b2-4bf5-9b91-485ba09fc08f",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Created On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "404487f1-4b7d-4bb0-abdc-7cd504e3a2ae",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Last Edited On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "7f23713f-0d8c-4952-a00e-63ca72f9bae3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/readonly?": false,
+            "fibery/secured?": true
+          },
+          "fibery/id": "b536eb31-fe1a-4e66-9f57-18ea39d3707e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notion Link",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "4ae3738e-e851-4326-be06-ebeefaa8a31e",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Tasks",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "e58e26a4-4f25-494f-bc4a-22f95930c68a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/public-id?": true,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "2a25914a-504c-4e47-a1a6-5c126967efe0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/secured?": false,
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now"
+          },
+          "fibery/id": "55480eae-3555-4ffa-9232-4d939b0ba5f3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/modification-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/modification-date?": true,
+            "fibery/required?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "2465d858-35b6-4db9-a5e1-52cdab898f9e",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "db5ed65a-94f5-460d-b4f1-56cc45a4baaa",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "11841ef2-8b10-41bb-8860-2630d19060e4",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Collaboration~Documents/References",
+          "fibery/type": "Collaboration~Documents/Reference",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "75e0848d-9640-4bce-b852-1b7b9bc882a3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Archived",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "72a84c44-8ea2-4304-986f-3a912ef13538",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Assigned To Ref",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": true,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "932ca05e-9926-4804-a155-488beed5198b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Assigned To_0wm0x4i_deleted",
+          "fibery/type": "Notion Import/User_06s0wi1_deleted",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "09df5663-92b1-4f73-81bb-8322095c9ae3",
+            "fibery/readonly?": false,
+            "link-rule/link-rule?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "0b646b34-db0d-4716-a7ec-04be820dd52e",
+          "fibery/deleted?": true
+        },
+        {
+          "fibery/name": "Notion Import/Client Tag",
+          "fibery/type": "Notion Import/Tasks Client Tag Enum",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/collection?": true,
+            "fibery/type-component?": true,
+            "fibery/relation": "052fca52-0664-4d94-8a21-81f3d06150cc"
+          },
+          "fibery/id": "c4f36139-64b1-49b8-802f-215724031dfe",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Created On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "d5fe3873-fff7-423f-89ae-5e5b8c8c3231",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Due",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "be5e2bee-6943-41c1-9689-72f697f51e4d",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Estimated Time",
+          "fibery/type": "fibery/decimal",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "dddb059d-bbd8-45ab-ac1e-51b797e5be89",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Last Edited On",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "1a379212-d240-4faa-a125-64d0bd188b9b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/readonly?": false,
+            "fibery/secured?": true
+          },
+          "fibery/id": "9b389de0-51fa-41b7-a006-63b656caa167",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notes",
+          "fibery/type": "Notion Import/Notes",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "09911fac-67ac-4e9f-8f35-5c4c1b7bcd68",
+            "fibery/readonly?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule?": false,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "85eb1b00-b774-4642-820d-6f46f8c8ab69",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Notion Link",
+          "fibery/type": "fibery/url",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "51e1ef35-1a27-4a9b-b3c1-33dae2520bf4",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Project",
+          "fibery/type": "Notion Import/Projects",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "387acbfc-1407-4b51-bfb7-b59dd57714f5",
+            "fibery/readonly?": false,
+            "ui/object-editor-order": 100,
+            "link-rule/link-rule?": false,
+            "link-rule/link-rule": null
+          },
+          "fibery/id": "9ff1fdcb-5282-4e95-bd5c-8f47345e7050",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Status",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/required?": true,
+            "fibery/readonly?": false,
+            "fibery/default-value": false
+          },
+          "fibery/id": "64fd0ccb-95dd-4b62-927b-95de9e6e4924",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Tags",
+          "fibery/type": "Notion Import/Tasks Tags Enum",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/collection?": true,
+            "fibery/type-component?": true,
+            "fibery/relation": "885f46a6-de78-403e-b238-8ff767c2cae5"
+          },
+          "fibery/id": "ea43548f-6a2d-45d6-b82b-a77671b8f975",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/Task ID",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/readonly?": false,
+            "ui/hidden?": false,
+            "ui/object-editor-order": 100,
+            "fibery/secured?": true
+          },
+          "fibery/id": "87cce0ac-6b29-476a-aca2-dcacb176dc42",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Tasks Client Tag Enum",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "7fe31e56-6f8b-4205-846b-7699cc20d1c3",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "f08806ed-e006-4225-95ec-07dbfe30ecaa",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "b3c616ef-d7a8-494c-ae92-ea15a340f4c1",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/entities",
+          "fibery/type": "Notion Import/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "052fca52-0664-4d94-8a21-81f3d06150cc"
+          },
+          "fibery/id": "cc969578-5ff2-4fe1-8ea9-a688b24226eb",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "89d80db1-afc2-4424-b670-b1143c0a54e8",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "66e99d59-e3f7-409f-80d8-8b90ba0ae708",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "cf23b308-42f1-43bc-9e65-06b05056a771",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "Tasks Tags Enum",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "e891368f-1955-450f-8277-12400f809c64",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "ca5e6876-4f02-4c08-9f02-1f359d1a16c5",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/rank",
+          "fibery/type": "fibery/rank",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "192b2df9-1382-49eb-8901-8c44acefea0a",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "Notion Import/entities",
+          "fibery/type": "Notion Import/Tasks",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/relation": "885f46a6-de78-403e-b238-8ff767c2cae5"
+          },
+          "fibery/id": "5faf0a83-cd20-4808-bc32-bbf757015fe7",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/color",
+          "fibery/type": "fibery/color",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "a75f4d89-17dc-4b2b-805d-e4653bdb4317",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": false
+          },
+          "fibery/id": "01010be4-a0c9-4aeb-99ec-fdfead3980e8",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "enum/name",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "ui/title?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "d75402ae-4dfc-4a46-a886-5815e940bc31",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "avatar": [
+    {
+      "name": "avatar-mixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "avatar/avatars",
+          "fibery/type": "fibery/file",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "f50158d9-adf0-4c3f-86c6-238696f270eb",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "name": "comment",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/secured?": false,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "5c160161-441a-4e95-906a-db985b370dd9",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/public-id",
+          "fibery/type": "fibery/text",
+          "fibery/meta": {
+            "fibery/public-id?": true,
+            "fibery/readonly?": true,
+            "fibery/secured?": false
+          },
+          "fibery/id": "487c83ee-fdee-4040-b797-1890b0dde7c0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/creation-date",
+          "fibery/type": "fibery/date-time",
+          "fibery/meta": {
+            "fibery/creation-date?": true,
+            "fibery/readonly?": true,
+            "fibery/default-value": "$now",
+            "fibery/secured?": false
+          },
+          "fibery/id": "6a15ecf3-8dff-4683-b4a3-da5a2a5c7d1b",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "fibery/created-by",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            },
+            "ui/hidden?": true
+          },
+          "fibery/id": "46f437c6-67c7-44d9-a884-21a16781b8c1",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "comment/author",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/relation": "88d04060-8c5c-11e9-8bed-15542567dee3",
+            "fibery/readonly?": true,
+            "fibery/default-value": {
+              "fibery/id": "$my-id"
+            }
+          },
+          "fibery/id": "ae37965d-40b9-4102-b91e-7d998f743253",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "comment/document-secret",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/secured?": true,
+            "fibery/readonly?": true,
+            "fibery/required?": true
+          },
+          "fibery/id": "f670f0b0-6391-4722-a601-8361f7c29ef0",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "comments/parent",
+          "fibery/type": "comments/comment",
+          "fibery/meta": {
+            "fibery/readonly?": true
+          },
+          "fibery/id": "32f4c6ac-7b53-49fd-a106-e4f2923b3592",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "comments-mixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "comments/comments",
+          "fibery/type": "comments/comment",
+          "fibery/meta": {
+            "fibery/collection?": true,
+            "fibery/entity-component?": true
+          },
+          "fibery/id": "f3ae383c-6c2e-433d-b328-626468c03e06",
+          "fibery/deleted?": false
+        }
+      ]
+    },
+    {
+      "name": "user-settings",
+      "fibery/fields": [
+        {
+          "fibery/name": "fibery/id",
+          "fibery/type": "fibery/uuid",
+          "fibery/meta": {
+            "fibery/id?": true,
+            "fibery/secured?": false,
+            "fibery/readonly?": true
+          },
+          "fibery/id": "8df83643-4912-4904-816d-087443cb59dc",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "comments/order-by-asc-creation-date?",
+          "fibery/type": "fibery/bool",
+          "fibery/meta": {
+            "fibery/required?": true,
+            "fibery/default-value": true
+          },
+          "fibery/id": "ee8e151a-06d8-498d-a312-5abfdb2ebfb8",
+          "fibery/deleted?": false
+        },
+        {
+          "fibery/name": "comments/user",
+          "fibery/type": "fibery/user",
+          "fibery/meta": {
+            "fibery/readonly?": true
+          },
+          "fibery/id": "f36c85d6-821a-417a-9ea8-86d4b487440c",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "name": "documents-mixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "documents/documents",
+          "fibery/type": "fibery/view",
+          "fibery/meta": {
+            "fibery/collection?": true
+          },
+          "fibery/id": "56aa3094-a44a-4b79-9e44-39cbb7ce17df",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "icon": [
+    {
+      "name": "icon-mixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "icon/icon",
+          "fibery/type": "fibery/emoji",
+          "fibery/meta": {
+            "fibery/secured?": true
+          },
+          "fibery/id": "2cb70234-f0e3-4c73-897b-bc98e2214cbd",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "whiteboards": [
+    {
+      "name": "whiteboards-mixin",
+      "fibery/fields": [
+        {
+          "fibery/name": "whiteboards/whiteboards",
+          "fibery/type": "fibery/view",
+          "fibery/meta": {
+            "fibery/collection?": true
+          },
+          "fibery/id": "61032b33-4a5a-429a-a6b5-2711d606f219",
+          "fibery/deleted?": false
+        }
+      ]
+    }
+  ],
+  "workflow": [
+    {
+      "name": "workflow",
+      "fibery/fields": []
+    }
+  ]
+}
