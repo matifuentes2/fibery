@@ -46,12 +46,12 @@ export class FiberyUn implements INodeType {
 				description: 'Resource to consume',
 			},
 			{
-				displayName: 'Table',
-				name: 'table',
+				displayName: 'Space',
+				name: 'space',
 				type: 'options',
 				typeOptions: {
 						loadOptionsDependsOn: ['schema'],
-						loadOptionsMethod: 'getTables',
+						loadOptionsMethod: 'getSpaces',
 				},
 				default: '',
 		}
@@ -60,7 +60,7 @@ export class FiberyUn implements INodeType {
 
 	methods = {
 		loadOptions: {
-				async getTables(this: ILoadOptionsFunctions) {
+				async getSpaces(this: ILoadOptionsFunctions) {
 						// Credentials
 					const credentials = await this.getCredentials("fiberyUnApi");
 					const ACCOUNT = credentials.account;
@@ -70,7 +70,7 @@ export class FiberyUn implements INodeType {
 					// Get Schema
 					const schema = await fibery.getSchema();
 
-					// Filtering Schema to get only user created Tables
+					// Filtering Schema to get only user created Spaces
 					function filterFiberyFields(data: any) {
 						return data.filter((entry: any) => !entry["fibery/name"].startsWith("fibery/") &&
 						!entry["fibery/name"].endsWith("_deleted"))
