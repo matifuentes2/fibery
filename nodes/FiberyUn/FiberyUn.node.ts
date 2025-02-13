@@ -10,13 +10,13 @@ import {
 import { getSchemaSpaces } from './loadOptions/getSchemaSpaces';
 import { getOperations } from './loadOptions/getOperations';
 // Import resource operation descriptions
-//@ts-ignore
-import { schemaOperations } from './operations/schema/description';
+
 // import { otherResourceOperations } from './operations/otherResource/description';
 // Import execution handlers
 
 //@ts-ignore
 import { executeSchema } from './operations/schema/execute';
+import { executeType } from './operations/type/execute';
 // import { executeOtherResource } from './operations/otherResource/execute';
 
 export class FiberyUn implements INodeType {
@@ -127,8 +127,8 @@ export class FiberyUn implements INodeType {
 		// Dispatch execution based on resource and operation
 		if (resource === 'schema') {
 			return executeSchema.call(this, operation);
-		// } else if (resource === 'otherResource') {
-		// 	return executeOtherResource.call(this, operation);
+		} else if (resource === 'type') {
+			return executeType.call(this, operation);
 		} else {
 			throw new Error(`Resource "${resource}" is not implemented!`);
 		}

@@ -1,7 +1,6 @@
 import { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
 //@ts-ignore
 import Fibery from 'fibery-unofficial';
-import { groupSchema } from '../../utils/groupSchema';
 
 export async function executeSchema(
 	this: IExecuteFunctions,
@@ -19,10 +18,7 @@ export async function executeSchema(
 		case 'getSchema': {
 			// Fetch and group the schema
 			const schema = await fibery.getSchema();
-			const grouped = groupSchema(schema);
-			// Assume "space" parameter is used to select a particular group
-			const space = this.getNodeParameter('space', 0)?.toString() ?? '';
-			return [this.helpers.returnJsonArray(grouped[space] || {})];
+			return [this.helpers.returnJsonArray(schema || {})];
 		}
 		case 'anotherSchemaOp': {
 			// Implement additional schema operation logic here

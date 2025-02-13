@@ -26,4 +26,5 @@ export async function getOperations(
 	}
 	// Return options in the format n8n expects
 	return operations ?? [{name: "", value: ""}]
+
 }
