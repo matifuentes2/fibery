@@ -1,25 +1,30 @@
-import { INodeType, INodeTypeDescription, NodeConnectionType,
-	// IDataObject,
-	INodeExecutionData, IExecuteFunctions, ILoadOptionsFunctions} from 'n8n-workflow';
+import {
+	INodeType,
+	INodeTypeDescription,
+	NodeConnectionType,
+	INodeExecutionData,
+	IExecuteFunctions,
+} from 'n8n-workflow';
 
-// @ts-ignore
-import Fibery from 'fibery-unofficial';
+// Import loadOptions methods
+import { getSchemaSpaces } from './loadOptions/getSchemaSpaces';
+// Import resource operation descriptions
+import { schemaOperations } from './operations/schema/description';
+// import { otherResourceOperations } from './operations/otherResource/description';
+// Import execution handlers
 
-// 	import {
-// 	OptionsWithUri,
-// } from 'request';
-
-let grouped:any;
+//@ts-ignore
+import { executeSchema } from './operations/schema/execute';
+// import { executeOtherResource } from './operations/otherResource/execute';
 
 export class FiberyUn implements INodeType {
 	description: INodeTypeDescription = {
-		// Basic node details will go here
 		displayName: 'Fibery (Unofficial)',
 		name: 'fiberyUn',
 		icon: 'file:logo.svg',
 		group: ['transform'],
 		version: 1,
-		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
+		subtitle: '={{$parameter["resource"] + ": " + $parameter["operation"]}}',
 		description: 'Use Fibery API',
 		defaults: {
 			name: 'Fibery (Unofficial)',
@@ -42,78 +47,79 @@ export class FiberyUn implements INodeType {
 						name: 'Schema',
 						value: 'schema',
 					},
+					{
+						name: 'Other Resource',
+						value: 'otherResource',
+					},
 				],
-				default: 'schema', // The initially selected option
-				noDataExpression: true,
-				description: 'Resource to consume',
+				default: 'schema',
+				description: 'Resource to interact with',
 			},
+			{
+				displayName: 'Operation',
+				name: 'operation',
+				type: 'options',
+				displayOptions: {
+					show: {
+						resource: ['schema'],
+					},
+				},
+				options: schemaOperations,
+				default: schemaOperations[0].value,
+				description: 'Operation to perform for Schema',
+			},
+			// {
+			// 	displayName: 'Operation',
+			// 	name: 'operation',
+			// 	type: 'options',
+			// 	displayOptions: {
+			// 		show: {
+			// 			resource: ['otherResource'],
+			// 		},
+			// 	},
+			// 	options: otherResourceOperations,
+			// 	default: otherResourceOperations[0].value,
+			// 	description: 'Operation to perform for Other Resource',
+			// },
+			// Additional parameters common to all resources can be added here
 			{
 				displayName: 'Space',
 				name: 'space',
 				type: 'options',
 				typeOptions: {
-						loadOptionsDependsOn: ['schema'],
-						loadOptionsMethod: 'getSpaces',
+					loadOptionsDependsOn: ['resource'],
+					loadOptionsMethod: 'getSchemaSpaces',
 				},
 				default: '',
-		}
-		]
+				displayOptions: {
+					show: {
+						resource: ['schema'],
+					},
+				},
+				description: 'Select a space for Schema resource',
+			},
+		],
 	};
 
 	methods = {
 		loadOptions: {
-				async getSpaces(this: ILoadOptionsFunctions) {
-						// Credentials
-					const credentials = await this.getCredentials("fiberyUnApi");
-					const ACCOUNT = credentials.account;
-					const API_KEY =credentials.apiKey;
-					const fibery = new Fibery({host: `${ACCOUNT}.fibery.io`, token: API_KEY});
-
-					// Get Schema
-					const schema = await fibery.getSchema();
-
-					// Filtering Schema to get only user created Spaces
-					function filterFiberyFields(data: any) {
-						return data.filter((entry: any) => !entry["fibery/name"].startsWith("fibery/") &&
-						!entry["fibery/name"].endsWith("_deleted"))
-					}
-					const filteredData = filterFiberyFields(schema);
-
-
-					// Restructure filtered schema to have spaces as keys
-					grouped = filteredData.reduce((acc: any, item: any) => {
-						// Split the "fibery/name" into prefix and suffix
-						const [key, name] = item["fibery/name"].split("/");
-
-						// Initialize the key in the accumulator if it doesn't exist
-						if (!acc[key]) {
-							acc[key] = [];
-						}
-
-						// Push an object with the extracted name and the original fibery/fields
-						acc[key].push({
-							name, // the part after "/"
-							"fibery/fields": item["fibery/fields"]
-						});
-
-						return acc;
-					}, {});
-
-					const spaces = Object.keys(grouped);
-
-						// Map response to n8n options format
-						return spaces.map(space_name => ({
-								name: space_name,
-								value: space_name,
-						})
-					);
-				},
+			getSchemaSpaces,
+			// You can add other load options methods for additional resources
 		},
-};
+	};
 
-	// The execute method will go here
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-		const space = this.getNodeParameter("space", 0)?.toString() ?? "";
-		return [this.helpers.returnJsonArray(grouped[space])];
+		// Retrieve selected resource and operation
+		const resource = this.getNodeParameter('resource', 0) as string;
+		const operation = this.getNodeParameter('operation', 0) as string;
+
+		// Dispatch execution based on resource and operation
+		if (resource === 'schema') {
+			return executeSchema.call(this, operation);
+		// } else if (resource === 'otherResource') {
+		// 	return executeOtherResource.call(this, operation);
+		} else {
+			throw new Error(`Resource "${resource}" is not implemented!`);
+		}
 	}
 }
