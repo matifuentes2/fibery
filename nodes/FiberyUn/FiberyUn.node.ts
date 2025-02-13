@@ -1,5 +1,13 @@
-import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, NodeConnectionType,
+	// IDataObject,
+	INodeExecutionData, IExecuteFunctions, ILoadOptionsFunctions} from 'n8n-workflow';
 
+// @ts-ignore
+import Fibery from 'fibery-unofficial';
+
+// 	import {
+// 	OptionsWithUri,
+// } from 'request';
 
 export class FiberyUn implements INodeType {
 	description: INodeTypeDescription = {
@@ -12,181 +20,98 @@ export class FiberyUn implements INodeType {
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: 'Use Fibery API',
 		defaults: {
-			name: 'NASA Pics',
+			name: 'Fibery (Unofficial)',
 		},
 		inputs: ['main' as NodeConnectionType],
 		outputs: ['main' as NodeConnectionType],
 		credentials: [
-	{
-		name: 'FiberUnApi',
-		required: true,
-	},
-],
-requestDefaults: {
-	baseURL: 'https://api.nasa.gov',
-	headers: {
-		Accept: 'application/json',
-		'Content-Type': 'application/json',
-	},
-},
-properties: [
-	{
-		displayName: 'Resource',
-		name: 'resource',
-		type: 'options',
-		noDataExpression: true,
-		options: [
 			{
-				name: 'Astronomy Picture of the Day',
-				value: 'astronomyPictureOfTheDay',
-			},
-			{
-				name: 'Mars Rover Photos',
-				value: 'marsRoverPhotos',
+				name: 'fiberyUnApi',
+				required: true,
 			},
 		],
-		default: 'astronomyPictureOfTheDay',
-	},
-	// Operations will go here
-	{
-		displayName: 'Operation',
-		name: 'operation',
-		type: 'options',
-		noDataExpression: true,
-		displayOptions: {
-			show: {
-				resource: [
-					'astronomyPictureOfTheDay',
-				],
-			},
-		},
-		options: [
+		properties: [
 			{
-				name: 'Get',
-				value: 'get',
-				action: 'Get the APOD',
-				description: 'Get the Astronomy Picture of the day',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/planetary/apod',
+				displayName: 'Resource',
+				name: 'resource',
+				type: 'options',
+				options: [
+					{
+						name: 'Schema',
+						value: 'schema',
 					},
-				},
-			},
-		],
-		default: 'get',
-	},
-	{
-		displayName: 'Operation',
-		name: 'operation',
-		type: 'options',
-		noDataExpression: true,
-		displayOptions: {
-			show: {
-				resource: [
-					'marsRoverPhotos',
 				],
+				default: 'schema', // The initially selected option
+				noDataExpression: true,
+				description: 'Resource to consume',
 			},
-		},
-		options: [
 			{
-				name: 'Get',
-				value: 'get',
-				action: 'Get Mars Rover photos',
-				description: 'Get photos from the Mars Rover',
-				routing: {
-					request: {
-						method: 'GET',
-					},
+				displayName: 'Table',
+				name: 'table',
+				type: 'options',
+				typeOptions: {
+						loadOptionsDependsOn: ['schema'],
+						loadOptionsMethod: 'getTables',
 				},
-			},
-		],
-		default: 'get',
-	},
-	{
-		displayName: 'Rover name',
-		description: 'Choose which Mars Rover to get a photo from',
-		required: true,
-		name: 'roverName',
-		type: 'options',
-		options: [
-			{name: 'Curiosity', value: 'curiosity'},
-			{name: 'Opportunity', value: 'opportunity'},
-			{name: 'Perseverance', value: 'perseverance'},
-			{name: 'Spirit', value: 'spirit'},
-		],
-		routing: {
-			request: {
-				url: '=/mars-photos/api/v1/rovers/{{$value}}/photos',
-			},
-		},
-		default: 'curiosity',
-		displayOptions: {
-			show: {
-				resource: [
-					'marsRoverPhotos',
-				],
-			},
-		},
-	},
-	{
-		displayName: 'Date',
-		description: 'Earth date',
-		required: true,
-		name: 'marsRoverDate',
-		type: 'dateTime',
-		default:'',
-		displayOptions: {
-			show: {
-				resource: [
-					'marsRoverPhotos',
-				],
-			},
-		},
-		routing: {
-			request: {
-				// You've already set up the URL. qs appends the value of the field as a query string
-				qs: {
-					earth_date: '={{ new Date($value).toISOString().substr(0,10) }}',
-				},
-			},
-		},
-	},
-	// Optional/additional fields will go here
-	{
-		displayName: 'Additional Fields',
-		name: 'additionalFields',
-		type: 'collection',
-		default: {},
-		placeholder: 'Add Field',
-		displayOptions: {
-			show: {
-				resource: [
-					'astronomyPictureOfTheDay',
-				],
-				operation: [
-					'get',
-				],
-			},
-		},
-		options: [
-			{
-				displayName: 'Date',
-				name: 'apodDate',
-				type: 'dateTime',
 				default: '',
-				routing: {
-					request: {
-						// You've already set up the URL. qs appends the value of the field as a query string
-						qs: {
-							date: '={{ new Date($value).toISOString().substr(0,10) }}',
-						},
-					},
-				},
-			},
-		],
-	}
-
-]
+		}
+		]
 	};
+
+	methods = {
+		loadOptions: {
+				async getTables(this: ILoadOptionsFunctions) {
+						// Credentials
+					const credentials = await this.getCredentials("fiberyUnApi");
+					const ACCOUNT = credentials.account;
+					const API_KEY =credentials.apiKey;
+					const fibery = new Fibery({host: `${ACCOUNT}.fibery.io`, token: API_KEY});
+
+					// Get Schema
+					const schema = await fibery.getSchema();
+
+					// Filtering Schema to get only user created Tables
+					function filterFiberyFields(data: any) {
+						return data.filter((entry: any) => !entry["fibery/name"].startsWith("fibery/") &&
+						!entry["fibery/name"].endsWith("_deleted"))
+					}
+					const filteredData = filterFiberyFields(schema);
+
+
+					// Restructure filtered schema to have spaces as keys
+					const grouped = filteredData.reduce((acc: any, item: any) => {
+						// Split the "fibery/name" into prefix and suffix
+						const [key, name] = item["fibery/name"].split("/");
+
+						// Initialize the key in the accumulator if it doesn't exist
+						if (!acc[key]) {
+							acc[key] = [];
+						}
+
+						// Push an object with the extracted name and the original fibery/fields
+						acc[key].push({
+							name, // the part after "/"
+							"fibery/fields": item["fibery/fields"]
+						});
+
+						return acc;
+					}, {});
+
+					const spaces = Object.keys(grouped);
+
+						// Map response to n8n options format
+						return spaces.map(space_name => ({
+								name: space_name,
+								value: space_name,
+						})
+					);
+				},
+		},
+};
+
+	// The execute method will go here
+	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+		const returnData = {a: 1}
+		return [this.helpers.returnJsonArray(returnData)];
+	}
 }

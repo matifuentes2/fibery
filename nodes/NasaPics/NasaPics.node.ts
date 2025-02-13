@@ -18,7 +18,7 @@ export class NasaPics implements INodeType {
 		outputs: ['main' as NodeConnectionType],
 		credentials: [
 	{
-		name: 'NasaPicsApi',
+		name: 'nasaPicsApi',
 		required: true,
 	},
 ],

@@ -1,8 +1,7 @@
 import Fibery from 'fibery-unofficial';
 import fs from 'fs';
 
-
-// Credentials
+// // Credentials
 const fibery = new Fibery({host: "blueprint.fibery.io", token: process.env.FIBERY_TOKEN});
 
 // Get Schema
@@ -13,12 +12,10 @@ function filterFiberyFields(data) {
   return data.filter(entry => !entry["fibery/name"].startsWith("fibery/") &
 	!entry["fibery/name"].endsWith("_deleted"))
 }
-
 const filteredData = filterFiberyFields(schema);
 
 
 // Restructure filtered schema to have spaces as keys
-
 const grouped = filteredData.reduce((acc, item) => {
   // Split the "fibery/name" into prefix and suffix
   const [key, name] = item["fibery/name"].split("/");
@@ -40,9 +37,7 @@ const grouped = filteredData.reduce((acc, item) => {
 const spaces = Object.keys(grouped);
 
 
-
 // Write to a file
-
 // Grouped
 // Convert the object to a JSON string
 const jsonString = JSON.stringify(grouped, null, 2);
