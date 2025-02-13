@@ -17,6 +17,7 @@ import { getOperations } from './loadOptions/getOperations';
 //@ts-ignore
 import { executeSchema } from './operations/schema/execute';
 import { executeType } from './operations/type/execute';
+import { executeEntity } from './operations/entity/execute';
 // import { executeOtherResource } from './operations/otherResource/execute';
 
 export class FiberyUn implements INodeType {
@@ -57,6 +58,10 @@ export class FiberyUn implements INodeType {
 					{
 						name: 'Field',
 						value: 'field',
+					},
+					{
+						name: 'Entity',
+						value: 'entity',
 					}
 				],
 				default: 'schema',
@@ -77,20 +82,6 @@ export class FiberyUn implements INodeType {
 				},
 				default: "",
 			},
-			// {
-			// 	displayName: 'Operation',
-			// 	name: 'operation',
-			// 	type: 'options',
-			// 	displayOptions: {
-			// 		show: {
-			// 			resource: ['otherResource'],
-			// 		},
-			// 	},
-			// 	options: otherResourceOperations,
-			// 	default: otherResourceOperations[0].value,
-			// 	description: 'Operation to perform for Other Resource',
-			// },
-			// Additional parameters common to all resources can be added here
 			{
 				displayName: 'Space',
 				name: 'space',
@@ -124,13 +115,20 @@ export class FiberyUn implements INodeType {
 		const resource = this.getNodeParameter('resource', 0) as string;
 		const operation = this.getNodeParameter('operation', 0) as string;
 
-		// Dispatch execution based on resource and operation
-		if (resource === 'schema') {
-			return executeSchema.call(this, operation);
-		} else if (resource === 'type') {
-			return executeType.call(this, operation);
-		} else {
-			throw new Error(`Resource "${resource}" is not implemented!`);
+
+		switch(resource){
+			case 'schema':{
+				return executeSchema.call(this, operation);
+			}
+			case 'type':{
+				return executeType.call(this, operation);
+			}
+			case 'entity':{
+				return executeEntity.call(this, operation);
+			}
+			default:{
+				throw new Error(`Resource "${resource}" is not implemented!`);
+			}
 		}
 	}
 }

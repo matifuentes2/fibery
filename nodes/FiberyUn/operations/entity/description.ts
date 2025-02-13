@@ -1,10 +1,9 @@
 import { INodePropertyOptions } from 'n8n-workflow';
 
-export const typeOperations: INodePropertyOptions[] = [
+export const entityOperations: INodePropertyOptions[] = [
 	{
-		name: 'Get many by Space',
-		value: 'getTypeBySpace',
-		description: 'Retrieve all the Types from a given Space'
+		name: 'Create Entity',
+		value: 'createEntity'
 	},
 	// {
 	// 	name: 'Another Schema Operation',

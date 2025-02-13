@@ -23,6 +23,12 @@ export async function getOperations(
 			];
 			break
 		}
+		case 'entity': {
+			operations = [
+				{name: "Create", value: "createEntity"}
+			];
+			break
+		}
 	}
 	// Return options in the format n8n expects
 	return operations ?? [{name: "", value: ""}]
