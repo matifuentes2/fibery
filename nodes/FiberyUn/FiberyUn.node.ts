@@ -9,6 +9,8 @@ import Fibery from 'fibery-unofficial';
 // 	OptionsWithUri,
 // } from 'request';
 
+let grouped:any;
+
 export class FiberyUn implements INodeType {
 	description: INodeTypeDescription = {
 		// Basic node details will go here
@@ -79,7 +81,7 @@ export class FiberyUn implements INodeType {
 
 
 					// Restructure filtered schema to have spaces as keys
-					const grouped = filteredData.reduce((acc: any, item: any) => {
+					grouped = filteredData.reduce((acc: any, item: any) => {
 						// Split the "fibery/name" into prefix and suffix
 						const [key, name] = item["fibery/name"].split("/");
 
@@ -111,7 +113,7 @@ export class FiberyUn implements INodeType {
 
 	// The execute method will go here
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-		const returnData = {a: 1}
-		return [this.helpers.returnJsonArray(returnData)];
+		const space = this.getNodeParameter("space", 0)?.toString() ?? "";
+		return [this.helpers.returnJsonArray(grouped[space])];
 	}
 }
