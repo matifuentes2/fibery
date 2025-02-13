@@ -7,12 +7,13 @@ export function groupSchema(schema: any[]): Record<string, any[]> {
 
 	// Group the filtered data by the prefix in "fibery/name"
 	return filteredData.reduce((acc: Record<string, any[]>, item: any) => {
-		const [key, name] = item['fibery/name'].split('/');
+		const og_name = item['fibery/name']
+		const [key, _] = og_name.split('/');
 		if (!acc[key]) {
 			acc[key] = [];
 		}
 		acc[key].push({
-			name, // the part after "/"
+			og_name, // the part after "/"
 			'fibery/fields': item['fibery/fields'],
 		});
 		return acc;

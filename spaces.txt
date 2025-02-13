@@ -1,1 +1,1 @@
-Admin,Collaboration~Documents,Files,Notion Import,avatar,comments,documents,icon,whiteboards,workflow
+Admin,Collaboration~Documents,Files,Notion Import,Test Space,avatar,comments,documents,icon,whiteboards,workflow
