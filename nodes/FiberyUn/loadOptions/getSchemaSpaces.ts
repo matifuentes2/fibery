@@ -5,8 +5,9 @@ import Fibery from 'fibery-unofficial';
 import { groupSchema } from '../utils/groupSchema';
 
 export async function getSchemaSpaces(
-	this: ILoadOptionsFunctions
+	this: ILoadOptionsFunctions,
 ): Promise<Array<{ name: string; value: string }>> {
+
 	// Retrieve credentials from the node's context
 	const credentials = await this.getCredentials('fiberyUnApi');
 	const ACCOUNT = credentials.account;

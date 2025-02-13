@@ -2,9 +2,9 @@ import { INodePropertyOptions } from 'n8n-workflow';
 
 export const schemaOperations: INodePropertyOptions[] = [
 	{
-		name: 'Get',
-		value: 'getSchema',
-		description: 'Retrieve the schema details'
+		name: 'Get many by Space',
+		value: 'getTypeBySpace',
+		description: 'Retrieve all the Types from a given Space'
 	},
 	// {
 	// 	name: 'Another Schema Operation',

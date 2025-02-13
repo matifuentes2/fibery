@@ -8,7 +8,9 @@ import {
 
 // Import loadOptions methods
 import { getSchemaSpaces } from './loadOptions/getSchemaSpaces';
+import { getOperations } from './loadOptions/getOperations';
 // Import resource operation descriptions
+//@ts-ignore
 import { schemaOperations } from './operations/schema/description';
 // import { otherResourceOperations } from './operations/otherResource/description';
 // Import execution handlers
@@ -40,6 +42,7 @@ export class FiberyUn implements INodeType {
 		properties: [
 			{
 				displayName: 'Resource',
+				noDataExpression: true,
 				name: 'resource',
 				type: 'options',
 				options: [
@@ -48,9 +51,13 @@ export class FiberyUn implements INodeType {
 						value: 'schema',
 					},
 					{
-						name: 'Other Resource',
-						value: 'otherResource',
+						name: 'Type',
+						value: 'type',
 					},
+					{
+						name: 'Field',
+						value: 'field',
+					}
 				],
 				default: 'schema',
 				description: 'Resource to interact with',
@@ -59,14 +66,16 @@ export class FiberyUn implements INodeType {
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
+				typeOptions: {
+					loadOptionsDependsOn: ['resource'],
+					loadOptionsMethod: 'getOperations',
+				},
 				displayOptions: {
 					show: {
-						resource: ['schema'],
+						resource: ['schema', 'type'],
 					},
 				},
-				options: schemaOperations,
-				default: schemaOperations[0].value,
-				description: 'Operation to perform for Schema',
+				default: "",
 			},
 			// {
 			// 	displayName: 'Operation',
@@ -87,13 +96,14 @@ export class FiberyUn implements INodeType {
 				name: 'space',
 				type: 'options',
 				typeOptions: {
-					loadOptionsDependsOn: ['resource'],
+					loadOptionsDependsOn: ['resource', 'operation'],
 					loadOptionsMethod: 'getSchemaSpaces',
 				},
 				default: '',
 				displayOptions: {
 					show: {
-						resource: ['schema'],
+						resource: ['type'],
+						operation: ['getTypeBySpace']
 					},
 				},
 				description: 'Select a space for Schema resource',
@@ -104,6 +114,7 @@ export class FiberyUn implements INodeType {
 	methods = {
 		loadOptions: {
 			getSchemaSpaces,
+			getOperations
 			// You can add other load options methods for additional resources
 		},
 	};
