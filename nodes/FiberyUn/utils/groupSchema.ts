@@ -1,4 +1,4 @@
-export function groupSchema(schema: any[]): Record<string, any[]> {
+export function groupSchemaBySpace(schema: any[]): Record<string, any[]> {
 	// Filter out system entries based on naming conventions
 	const filteredData = schema.filter((entry: any) => {
 		const name = entry['fibery/name'];
@@ -13,7 +13,7 @@ export function groupSchema(schema: any[]): Record<string, any[]> {
 			acc[key] = [];
 		}
 		acc[key].push({
-			og_name, // the part after "/"
+			'name': og_name, // the part after "/"
 			'fibery/fields': item['fibery/fields'],
 		});
 		return acc;

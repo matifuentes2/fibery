@@ -10,8 +10,8 @@ export const FiberyUnSpaces: INodeProperties = {
 	default: '',
 	displayOptions: {
 		show: {
-			resource: ['type', 'entity'],
-			operation: ['getTypeBySpace', 'createEntity']
+			resource: ['type', 'entity', 'field'],
+			operation: ['getTypeBySpace', 'createEntity', 'getFieldsFromType']
 		},
 	},
 	description: 'Select a space for Schema resource',

@@ -18,6 +18,8 @@ import { executeType } from './operations/type/execute';
 import { executeEntity } from './operations/entity/execute';
 // import { executeOtherResource } from './operations/otherResource/execute';
 import { FiberyUnDescription } from './FiberyUnDescription';
+import { getSpaceTypes } from './loadOptions/getSpaceTypes';
+import { executeField } from './operations/field/execute';
 
 export class FiberyUn implements INodeType {
 	description = FiberyUnDescription;
@@ -25,6 +27,7 @@ export class FiberyUn implements INodeType {
 	methods = {
 		loadOptions: {
 			getSchemaSpaces,
+			getSpaceTypes,
 			getOperations
 			// You can add other load options methods for additional resources
 		},
@@ -43,6 +46,9 @@ export class FiberyUn implements INodeType {
 			}
 			case 'entity':{
 				return executeEntity.call(this, operation);
+			}
+			case 'field':{
+				return executeField.call(this, operation);
 			}
 			default:{
 				throw new Error(`Resource "${resource}" is not implemented!`);

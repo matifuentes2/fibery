@@ -4,7 +4,7 @@ import { ILoadOptionsFunctions } from 'n8n-workflow';
 import Fibery from 'fibery-unofficial';
 import { groupSchemaBySpace } from '../utils/groupSchema';
 
-export async function getSchemaSpaces(
+export async function getSpaceTypes(
 	this: ILoadOptionsFunctions,
 ): Promise<Array<{ name: string; value: string }>> {
 

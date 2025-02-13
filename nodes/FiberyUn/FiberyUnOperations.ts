@@ -11,7 +11,7 @@ export const FiberyUnOperations: INodeProperties = {
 	},
 	displayOptions: {
 		show: {
-			resource: ['schema', 'type', 'entity'],
+			resource: ['schema', 'type', 'entity', 'field'],
 		},
 	},
 	default: "",

@@ -4,6 +4,7 @@ import Fibery from 'fibery-unofficial';
 import { schemaOperations } from '../operations/schema/description';
 import { typeOperations } from '../operations/type/description';
 import { entityOperations } from '../operations/entity/description';
+import { fieldOperations } from '../operations/field/description';
 
 export async function getOperations(
 	this: ILoadOptionsFunctions
@@ -23,6 +24,10 @@ export async function getOperations(
 		}
 		case 'entity': {
 			operations = entityOperations;
+			break
+		}
+		case 'field': {
+			operations = fieldOperations;
 			break
 		}
 	}

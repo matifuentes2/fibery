@@ -3,7 +3,7 @@ import { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
 import Fibery from 'fibery-unofficial';
 import { groupSchemaBySpace } from '../../utils/groupSchema';
 
-export async function executeType(
+export async function executeField(
 	this: IExecuteFunctions,
 	operation: string
 ): Promise<INodeExecutionData[][]> {
@@ -16,7 +16,7 @@ export async function executeType(
 
 	// Switch based on the selected operation for schema resource
 	switch (operation) {
-		case 'getTypeBySpace': {
+		case 'getFieldsFromType': {
 			// Fetch and group the schema
 			const schema = await fibery.getSchema();
 			const grouped = groupSchemaBySpace(schema);
@@ -24,12 +24,7 @@ export async function executeType(
 			const space = this.getNodeParameter('space', 0)?.toString() ?? '';
 			return [this.helpers.returnJsonArray(grouped[space] || {})];
 		}
-		case 'anotherSchemaOp': {
-			// Implement additional schema operation logic here
-			// For example, returning the whole schema:
-			const schema = await fibery.getSchema();
-			return [this.helpers.returnJsonArray(schema)];
-		}
+
 		default:
 			throw new Error(`Operation "${operation}" is not supported for Schema resource.`);
 	}

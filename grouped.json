@@ -3635,7 +3635,7 @@
   ],
   "Test Space": [
     {
-      "name": "Test DB",
+      "name": "Person",
       "fibery/fields": [
         {
           "fibery/name": "fibery/id",
