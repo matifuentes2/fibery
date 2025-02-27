@@ -13,7 +13,7 @@ export function groupSchemaBySpace(schema: any[]): Record<string, any[]> {
 			acc[key] = [];
 		}
 		acc[key].push({
-			'name': og_name, // the part after "/"
+			'fibery/name': og_name, // the part after "/"
 			'fibery/fields': item['fibery/fields'],
 		});
 		return acc;

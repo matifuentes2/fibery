@@ -11,7 +11,7 @@ export const FiberyUnTypes: INodeProperties = {
 	default: '',
 	displayOptions: {
 		show: {
-			resource: ['space'],
+			resource: ['field'],
 			operation: ['getFieldsFromType']
 		},
 	},

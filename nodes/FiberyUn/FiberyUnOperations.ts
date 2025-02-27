@@ -14,5 +14,5 @@ export const FiberyUnOperations: INodeProperties = {
 			resource: ['schema', 'type', 'entity', 'field'],
 		},
 	},
-	default: "",
+	default: "Get",
 }
