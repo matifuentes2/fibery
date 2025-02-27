@@ -23,7 +23,8 @@ export async function getSpaceTypes(
 	const grouped = groupSchemaBySpace(schema);
 
 	const selected_space = this.getCurrentNodeParameter('space')?.toString() ?? "";
-	const types = grouped[selected_space]
+	const types_raw = grouped[selected_space]
+	const types = types_raw.map((entry:any) => (entry['fibery/name'].split("/")[1]) )
 
 	// Return options in the format n8n expects
 	return types.map((type_name:any) => ({

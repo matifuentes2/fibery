@@ -5,6 +5,7 @@ import {
 import { FiberyUnResources } from './FiberyUnResources';
 import { FiberyUnOperations } from './FiberyUnOperations';
 import { FiberyUnSpaces } from './FiberyUnSpaces';
+import { FiberyUnTypes } from './FiberyUnTypes';
 
 export const FiberyUnDescription: INodeTypeDescription = {
 	displayName: 'Fibery (Unofficial)',
@@ -29,7 +30,8 @@ export const FiberyUnDescription: INodeTypeDescription = {
 
 		FiberyUnResources,
 		FiberyUnOperations,
-		FiberyUnSpaces
+		FiberyUnSpaces,
+		FiberyUnTypes
 
 	],
 }

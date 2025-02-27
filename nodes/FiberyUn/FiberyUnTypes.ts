@@ -1,11 +1,11 @@
-import { INodeProperties} from "n8n-workflow";
+import { INodeProperties } from "n8n-workflow";
 
 export const FiberyUnTypes: INodeProperties = {
-	displayName: 'Type',
+	displayName: 'Type Name or ID',
 	name: 'type',
 	type: 'options',
 	typeOptions: {
-		loadOptionsDependsOn: ['resource'],
+		loadOptionsDependsOn: ['resource', 'space'],
 		loadOptionsMethod: 'getSpaceTypes',
 	},
 	default: '',
@@ -15,5 +15,5 @@ export const FiberyUnTypes: INodeProperties = {
 			operation: ['getFieldsFromType']
 		},
 	},
-	description: 'Select a space for Schema resource',
+	description: 'Select a space for Schema resource. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.',
 }

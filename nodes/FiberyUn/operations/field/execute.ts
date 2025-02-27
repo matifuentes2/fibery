@@ -22,7 +22,13 @@ export async function executeField(
 			const grouped = groupSchemaBySpace(schema);
 			// Assume "space" parameter is used to select a particular group
 			const space = this.getNodeParameter('space', 0)?.toString() ?? '';
-			return [this.helpers.returnJsonArray(grouped[space] || {})];
+			const type = this.getNodeParameter('type', 0)?.toString() ?? '';
+			const space_type = `${space}/${type}`
+			const type_fields_obj = grouped[space].filter(element => element['fibery/name'] == space_type);
+			const type_fields = type_fields_obj.map(element => element['fibery/fields']);
+
+			return [this.helpers.returnJsonArray(type_fields)];
+			// return [this.helpers.returnJsonArray(grouped[space] || {})];
 		}
 
 		default:
